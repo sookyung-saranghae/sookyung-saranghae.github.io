@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수경이 선물</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>🌸 Surprise! 🌸</h1>
+      <p>이 세상에 가장 소중한 사람,</p>
+      <p class="highlight">이런 선물은 진짜 받아본적 없잖아! 💖</p>
+      <p>항상 내 곁에서 웃어줘서 고마워.<br>너는 나에게 가장 큰 행복이야. 😊</p>
+      <p>오늘 하루도 네가 행복하길 바라며,<br>늘 너를 응원할게. 사랑해! ❤️</p>
+      <button onclick="revealMessage()">특별한 메시지 보기</button>
+      <p id="hiddenMessage" style="display: none;">사랑해 조수경! 💌</p>
+    </div>
+  </div>
+  <script>
+    function revealMessage() {
+      const message = document.getElementById("hiddenMessage");
+      message.style.display = "block";
+    }
+  </script>
+</body>
+</html>
