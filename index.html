@@ -9,19 +9,42 @@
 <body>
   <div class="container">
     <div class="card">
-      <h1>🌸 Surprise! 🌸</h1>
-      <p>이 세상에 가장 소중한 사람,</p>
-      <p class="highlight">이런 선물은 진짜 받아본적 없잖아! 💖</p>
-      <p>항상 내 곁에서 웃어줘서 고마워.<br>너는 나에게 가장 큰 행복이야. 😊</p>
-      <p>오늘 하루도 네가 행복하길 바라며,<br>늘 너를 응원할게. 사랑해! ❤️</p>
-      <button onclick="revealMessage()">특별한 메시지 보기</button>
-      <p id="hiddenMessage" style="display: none;">사랑해 조수경! 💌</p>
+      <h1>누가 제일 잘생김?</h1>
+      <img src="https://via.placeholder.com/150" alt="Happy Image" class="main-image">
+      <p id="text"></p>
+      <p id="highlight-text" class="highlight"></p>
+      <button onclick="changeImage()">다음으로</button>
     </div>
   </div>
   <script>
-    function revealMessage() {
-      const message = document.getElementById("hiddenMessage");
-      message.style.display = "block";
+    let currentIndex = 0;
+    const images = [
+      "https://via.placeholder.com/150",
+      "https://file.osen.co.kr/article/2024/11/28/202411281929772897_674845f40d061_1024x.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmblZmGESoW0pkx8gjKUqqDLWiPA7LL-wECNV7fGsteG-mDSHMEoTg43EPsAChdy8-56c&usqp=CAU",
+      "./me.jpg"
+    ];
+
+    const texts = [
+      { text: "제일 잘생긴 사람을 골라줘", highlight: "제일 잘생긴 사람을 골라줘! 💖" },
+      { text: "아무래도", highlight: "박보검?! 💖"},
+      { text: "아니면 강아지의 대표상", highlight: "채종협?! 💖"},
+      { text: "그래도 너를 제일 좋아하는건 나잖아", highlight: "선물은 나야! 💖"}
+    ];
+
+    function changeImage() {
+      // 이미지 변경
+      const image = document.querySelector(".main-image");
+      currentIndex = (currentIndex + 1) % images.length;
+      image.src = images[currentIndex];
+
+      // 텍스트 변경
+      const text = document.getElementById("text");
+      const highlightText = document.getElementById("highlight-text");
+     
+      text.textContent = texts[currentIndex].text;
+      highlightText.textContent = texts[currentIndex].highlight;
+      
     }
   </script>
 </body>
